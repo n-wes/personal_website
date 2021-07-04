@@ -16,7 +16,7 @@
 <style scoped>
     .container {
         text-align: left;
-        margin-left: 15%;
+        padding-left: 15%;
     }
     h1 {
         color: var(--paleorange);

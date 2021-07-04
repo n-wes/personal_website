@@ -63,12 +63,15 @@ button:hover {
   cursor: pointer;
 }
 .no-margin-top {
-    margin-top: 0;
+  margin-top: 0;
 }
 .no-margin-bottom {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 .small-margin-bottom {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+.small-margin-top {
+  margin-top: 3rem;
 }
 </style>
