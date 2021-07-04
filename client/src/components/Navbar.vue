@@ -1,12 +1,12 @@
 <template>
 <div class="container">
-  <a href="#" id="logo">NW</a>
+  <a href="/" id="logo">NW</a>
   <nav>
     <ul class="navlinks">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">experience</a></li>
-      <li><a href="#">contact</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/About">About</a></li>
+      <li><a href="/Experience">experience</a></li>
+      <li><a href="/Contact">contact</a></li>
     </ul>
   </nav>
   </div>
