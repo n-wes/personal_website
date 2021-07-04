@@ -13,9 +13,6 @@
     </div>
 </template>
 
-<script>
-</script>
-
 <style scoped>
     .container {
         text-align: left;
@@ -32,5 +29,4 @@
         font-family: 'Josefin Sans';
         color: var(--gray);
     }
- 
 </style>
