@@ -1,23 +1,21 @@
 <template>
   <Navbar/>
-  <Home/>
+  <router-view/>
 </template>
 
-<script setup>
-import Home from './components/Home.vue'
+<script>
 import Navbar from './components/Navbar.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Navbar
+  }
+}
 
 </script>
 
 <style>
-/*
-  Font Families:
-  Major Mono Display
-  Sirin Stencil
-  Capriola
-  Josefin Sans
-  Lexend Deca
-*/
 @import url('https://fonts.googleapis.com/css2?family=Capriola&family=Josefin+Sans&family=Lexend+Deca&family=Major+Mono+Display&family=Sirin+Stencil&display=swap');
 
 html {
