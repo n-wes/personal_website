@@ -1,8 +1,14 @@
 <template>
-    <div>
-        <h1>Hello There!</h1>
-        <h2>I'm Nathan Wesley. I make things.</h2>
-        <p>I’m a student studying Computer Science at Southern Methodist University in Dallas, TX. I specialize in fullstack web and mobile development.</p>
+    <div class="container">
+        <h1 class="small-margin-bottom">Hello There!</h1>
+        <div class="small-margin-bottom">
+            <h2>I'm Nathan Wesley.</h2>
+            <h2 class="no-margin-top">I make things.</h2>
+        </div>
+        <div class="small-margin-bottom">
+            <p class="no-margin-bottom">I’m a student studying Computer Science at Southern Methodist University in Dallas, TX.</p>
+            <p class="no-margin-top">I specialize in fullstack web and mobile developent.</p>
+        </div>
         <button>Get in touch.</button>
     </div>
 </template>
@@ -11,30 +17,20 @@
 </script>
 
 <style scoped>
-    div {
+    .container {
         text-align: left;
         margin-left: 15%;
     }
     h1 {
-        font-family: 'Sirin Stencil';
-        font-size: 122px;
-        font-weight: 400;
-        color: #feeecd;
-        margin-bottom: 0;
+        color: var(--paleorange);
     }
     h2 {
-        font-family: 'Capriola';
-        font-size: 48px;
-        font-weight: 100;
-        color: #feeecd;
-        height: 120px;
-        width: 488px; 
+        color: var(--paleorange);
+        margin-bottom: 0;
     }
     p {
         font-family: 'Josefin Sans';
-        font-size: 36px;
-        color: #8894a1;
-        height: 134px;
-        width: 1034px;
+        color: var(--gray);
     }
+ 
 </style>
