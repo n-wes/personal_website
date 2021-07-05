@@ -49,14 +49,18 @@ p {
   font-size: 1.5rem;
 }
 button {
-    font-family: 'Capriola';
-    font-size: 1.7rem;
-    color: var(--darksalmon);
+
     border-color: var(--darksalmon);
     background-color: transparent;
     border-style: solid;
     padding: 1rem 2rem 1rem 2rem;
     transition: background-color .5s;
+}
+button a {
+  font-family: 'Capriola';
+  font-size: 1.7rem;
+  color: var(--darksalmon); 
+  text-decoration: none;
 }
 button:hover {
   background-color: var(--paleorange);
