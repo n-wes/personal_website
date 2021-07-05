@@ -9,7 +9,7 @@
             <p class="no-margin-bottom">I’m a student studying Computer Science at Southern Methodist University in Dallas, TX.</p>
             <p class="no-margin-top">I specialize in fullstack web and mobile developent.</p>
         </div>
-        <button><a href="/About">Get in touch.</a></button>
+        <button><a href="/Contact">Get in touch.</a></button>
     </div>
 </template>
 
