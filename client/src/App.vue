@@ -74,4 +74,8 @@ button:hover {
 .small-margin-top {
   margin-top: 3rem;
 }
+.descriptive-list {
+  list-style-type: '> ';
+  color: var(--gray);
+}
 </style>

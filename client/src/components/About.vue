@@ -10,7 +10,7 @@
       <br/>
       Here are a few technologies I’ve been working with recently:  
     </p>
-     <ul class="skills-list">
+     <ul class="descriptive-list skills-list">
       <li><span>JavaScript</span></li>
       <li><span>React</span></li>
       <li><span>SQL</span></li>
@@ -46,8 +46,6 @@ img {
   max-height: 35rem;
 }
 .skills-list {
-  list-style-type: '> ';
-  color: var(--gray);
   font-size: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
