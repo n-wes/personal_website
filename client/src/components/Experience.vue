@@ -1,25 +1,107 @@
 <template>
   <div class="container small-margin-top">
-    <h1 class="item-1">Where i've worked:</h1>
+    <h1 class="item-1">Where I've worked:</h1>
     <ul class="company-list">
-      <li><span>Headstorm</span></li>
-      <li><span>Southern Methodist University</span></li>
-      <li><span>HackSMU</span></li>
-      <li><span>AT&#38T</span></li>
-      <li><span>ANI Networks</span></li>
-      <li><span>NV5</span></li>
+      <li><span value='headstorm' @click='setCompany'>Headstorm</span></li>
+      <li><span value='smu' @click='setCompany'>Southern Methodist University</span></li>
+      <li><span value='hacksmu' @click='setCompany'>HackSMU</span></li>
+      <li><span value='att' @click='setCompany'>AT&#38T</span></li>
+      <li><span value='ani' @click='setCompany'>ANI Networks</span></li>
+      <li><span value='nv5' @click='setCompany'>NV5</span></li>
     </ul>
     <div>
-      <h2 class="no-margin-top no-margin-bottom">Job Role <span>@ Company</span></h2>
-      <h3 class="no-margin-top">Month 20XX - Month 20XX</h3>
+      <h2 class="no-margin-top no-margin-bottom">{{ company.role }} <span>@ {{ company.name }}</span></h2>
+      <h3 class="no-margin-top">{{ company.timespan }}</h3>
       <ul class="descriptive-list">
-        <li><p>Job description. I did this and this and this and this and this and this and this and this and this and this and that and that and this too.</p></li>
-        <li><p>Job description. I did this and this and this and this and this and this and this and this and this and this and that and that and this too.</p></li>
-        <li><p>Job description. I did this and this and this and this and this and this and this and this and this and this and that and that and this too.</p></li>
+        <li v-for='description in company.roleDescriptions'><span>{{ description }}</span></li>
       </ul>
     </div>
   </div>
 </template>
+
+<script>
+const Company = class {
+  constructor(name, role, timespan, roleDescriptions) {
+    this.name = name,
+    this.role = role,
+    this.timespan = timespan,
+    this.roleDescriptions = roleDescriptions
+  }
+}
+const companies = {
+  headstorm: new Company(
+    'Headstorm',
+    'Consultant Intern',
+    'May 2021 - Present',
+    [
+      'Created application to convert handwritten paper forms to digital forms using Azure AI Platform',
+      'Contributor to FoundryUI, a React and ReactNative UI library',
+      'Automated web tasks using Python Selenium'
+    ]
+  ),
+  smu: new Company(
+    'SMU',
+    'Teaching Assistant',
+    'January 2020 - Present',
+    [
+      'Mentored 60+ students in Arduino programming, mechanical design, and project management',
+      'Maintain Arduino libraries and documentation used by students to control robot movements and sensors'
+    ]
+  ),
+  hacksmu: new Company (
+    'HackSMU',
+    'Director',
+    'August 2019 - Present',
+    [
+      'Lead organizer for SMU’s annual hackathon, attracting 100+ students',
+      'Hosted weekly meetings with a team of six organizers to plan hackathon budget, logistics, and promotion',
+      'Managed $8,000 club budget for hackathon and club events',
+      'Created python scripts to clean and analyze hackathon participant demographic data'
+    ]
+  ),
+  att: new Company(
+    'AT&T',
+    'Software Engineering Intern',
+    'June 2020 - August 2020',
+    [
+      'Created interfaces and APIs using React and Java Spring Boot for internal project management tools',
+      'Collaborated with 5 interns to create TurnUp, a web-application to assess the probability of employees contracting COVID-19 and track employee presence to prevent overcrowding of buildings',
+      'Full-stack developer and designer for TurnUp, using MongoDB, Express, Node, and React'
+    ]
+  ),
+  ani: new Company(
+    'ANI Networks',
+    'Software Engineering Intern',
+    'May 2019 - August 2019',
+    [
+      'Developed a web-app to manage employee purchase orders using ASP.NET',
+      'Designed database schemas for storing employee purchasing data in Microsoft SQL Server',
+      'Used C# and SQL to create automatic email notifications and find data anomalies'
+    ]
+  ),
+  nv5: new Company(
+    'NV5',
+    'Mechanical Engineering Intern',
+    'May 2017 - August 2017',
+    [
+      'Assisted mechanical engineers in the designing and planning of HVAC systems and structures of commercial buildings in the Las Vegas Area and surrounding regions'
+    ]
+  )
+}
+export default {
+  data() {
+    return {
+      company: companies['headstorm']
+    }
+  },
+  methods: {
+    setCompany(event) {
+      const company = event.target.attributes[0].value
+      this.company = companies[company]
+    }
+  }
+}
+</script>
 
 <style scoped>
   .container {
@@ -27,7 +109,7 @@
     padding-right: 10%;
     text-align: left;
     display: grid;
-    grid-template-columns: 6fr 7fr;
+    grid-template-columns: 5fr 8fr;
   }
   h1 {
     color: var(--darksalmon);
@@ -39,6 +121,12 @@
     color: white;
     font-weight: 100;
   }
+  h2 {
+    font-size: 2rem;
+  }
+  h2 span {
+    color: var(--paleorange)
+  }
   .company-list {
     list-style: none;
     display: flex;
@@ -46,7 +134,7 @@
     padding-left: 0;
     padding-top: 2rem;
   }
-  .company-list li {
+  .company-list li, .descriptive-list li {
     margin-bottom: 1.5rem;
   }
   .company-list li span {
