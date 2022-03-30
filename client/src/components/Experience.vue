@@ -1,7 +1,8 @@
 <template>
   <div class="container small-margin-top">
-    <h1 class="item-1">Where I've worked:</h1>
+    <h1>Where I've worked:</h1>
     <ul class="company-list">
+      <li><span value='elevatorAuditions' @click='setCompany'>Elevator Auditions</span></li>
       <li><span value='headstorm' @click='setCompany'>Headstorm</span></li>
       <li><span value='smu' @click='setCompany'>Southern Methodist University</span></li>
       <li><span value='hacksmu' @click='setCompany'>HackSMU</span></li>
@@ -29,10 +30,20 @@ const Company = class {
   }
 }
 const companies = {
+  elevatorAuditions: new Company(
+    'Elevator Auditions',
+    'Software Engineer',
+    'May 2021 - Present',
+    [
+      'Lead the design and development for Elevator Auditions, a mobile social media application',
+      'Developed the application using React Native, Swift, Kotlin, and Google Cloud',
+      'Developed features such as user posts, instant messaging, and in-app advertisements'
+    ] 
+  ),
   headstorm: new Company(
     'Headstorm',
     'Consultant Intern',
-    'May 2021 - Present',
+    'May 2021 - August 2021',
     [
       'Created application to convert handwritten paper forms to digital forms using Azure AI Platform',
       'Contributor to FoundryUI, a React and ReactNative UI library',
@@ -91,7 +102,7 @@ const companies = {
 export default {
   data() {
     return {
-      company: companies['headstorm']
+      company: companies['elevatorAuditions']
     }
   },
   methods: {
