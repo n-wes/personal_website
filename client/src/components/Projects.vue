@@ -11,7 +11,7 @@
                     </div>
                         <h2 class="card-title"><span>{{ project.title }} </span></h2>
                         <h3><span>{{ project.summary }} </span></h3>
-                </div> -->
+                </div>
             </a>
             </div>
         </li>
